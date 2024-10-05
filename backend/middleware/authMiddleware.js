@@ -15,15 +15,7 @@ const protect = (req, res, next) => {
     }
 };
 
-// Role-based access middleware
-const authorize = (...roles) => {
-    return (req, res, next) => {
-        if (!roles.includes(req.user.role)) {
-            return res.status(403).json({ msg: 'Access denied' });
-        }
-        next();
-    };
-};
 
 
-module.exports = { authorize, protect };
+
+module.exports = {  protect };
